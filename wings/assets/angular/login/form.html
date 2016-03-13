@@ -1,0 +1,36 @@
+<div class="ui container">
+<div class="ui middle aligned center aligned grid">
+  <div class="column">
+    <h2 class="ui red icon header">
+      <i class="plane icon"></i>
+      <div class="content">
+        Time to fly.
+      </div>
+    </h2>
+    <form class="ui large form">
+      <div class="ui segment">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" ng-model="data.user_email" placeholder="E-mail address">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" ng-model="data.user_password" placeholder="Password">
+          </div>
+        </div>
+        <div class="ui fluid large red submit button" ng-click="userLogin()">Login</div>
+      </div>
+
+      <div class="ui error message"></div>
+
+    </form>
+
+    <div class="ui message">
+      Need help? <a href="<?=link_to('/admin/help')?>">Get help</a>.
+    </div>
+  </div>
+</div>
+</div><!-- container -->

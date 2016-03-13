@@ -1,0 +1,30 @@
+<div class="ui container">
+
+  <form class="ui form" admin-form-validation>
+    <h2 class="ui header">
+      <div class="content">Application Setup</div>
+    </h2>
+    <div class="field">
+      <label>Application name</label>
+      <input type="text" name="app_name" ng-model="data.app_name" class="input"/>
+      </div>
+      <div>
+        <h3>Create your first user</h3>
+        <p>Your username will be your email address. There are several great security reasons to do this, but the most important is that you will stay connected to the status of your application via email if necessary.<br><br></p>
+      </div>
+      <div class="field">
+        <label>Email address</label>
+        <input type="text" name="admin_email"  ng-model="data.admin_email" class="input"/>
+        </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="admin_password" ng-model="data.admin_password" class="input"/>
+        </div>
+      <div class="field">
+        <label>Confirm Password</label>
+        <input type="password" name="admin_confirm"  ng-model="data.admin_confirm" class="input"/>
+        </div>
+        <button class="ui submit red right floated large button">Install Wings <i class="right arrow icon"></i></button>
+    </form><br>
+
+  </div>

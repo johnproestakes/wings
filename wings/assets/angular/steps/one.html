@@ -1,0 +1,41 @@
+<div class="ui container">
+
+
+
+  <form class="ui form" db-form-validation>
+    <h2 class="ui header">
+      <div class="content">Database Connection</div>
+    </h2>
+    <p>Enter your database connection details below. If you are unsure about any of these, contact your web host.<br>&nbsp;<br></p>
+    <div class="field">
+          <label>Database Name</label>
+          <input type="text" name="db_name" ng-model="data.db_name" class="input"/>
+        </div>
+        <div class="field">
+          <label>Database User Name</label>
+          <input type="text" name="db_username" ng-model="data.db_username" class="input"/>
+        </div>
+        <div class="field">
+          <label>Database Password</label>
+          <input type="password" name="db_password" ng-model="data.db_password" class="input" placeholder="xxx"/>
+        </div>
+        <div class="field">
+          <label>Database Host</label>
+          <input type="text" name="db_hostname" class="input" ng-model="data.db_hostname"  placeholder="localhost"/>
+        </div>
+        <div class="field">
+          <label>Database Port</label>
+          <input type="text" name="db_port" ng-model="data.db_port" class="input" placeholder="8080"/>
+        </div>
+
+    <div class="ui horizontal divider">Table Structure</div>
+    <div class="field">
+        <label>Table Prefix</label>
+        <input type="text" name="tbl_prefix" ng-model="data.tbl_prefix" class="input" value="wings_"/>
+      </div>
+
+      <button class="ui large right floated submit red button" ng-click="" >Next <i class="right arrow icon"></i></button>
+      <div style="clear:both;"></div>
+  </form><br>
+
+  </div>

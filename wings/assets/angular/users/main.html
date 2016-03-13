@@ -1,0 +1,27 @@
+<table class="ui very basic collapsing celled full-width table" style="width:100%;">
+  <thead class="full-width">
+    <tr><th>User</th>
+    <th ng-repeat="(i,a) in levels">{{i}}</th>
+  </tr></thead>
+  <tbody>
+    <tr ng-repeat="(key, user) in users">
+      <td>
+        <h4 class="ui image header">
+          <i class="user icon"></i>
+          <div class="content">
+            {{user['user_email']}}
+            <div class="sub header">Holler</div>
+        </div>
+      </h4></td>
+      <td ng-repeat="(a,i) in levels">
+        <div class="ui checkbox">
+          <input type="checkbox" name="{{a}}" ng-model="user['user_access'][a]">
+          <label>{{i}}</label>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+<button class="ui button">Add New User</button>
