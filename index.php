@@ -58,10 +58,13 @@ if (defined('ENVIRONMENT')) {
 
 // print_r($_SERVER);
 //   die('');
-  $protocol = explode("/", $_SERVER['HTTP_PROTOCOL']);
+  $protocol = explode("/", $_SERVER['SERVER_PROTOCOL']);
   $protocol = strtolower(array_shift($protocol));
-  $config['site_url'] = $protocol."://".$_SERVER['HTTP_HOST'].":8888".dirname($_SERVER['SCRIPT_NAME']) . "/";
+  $config['site_url'] = $protocol."://".$_SERVER['HTTP_HOST'].dirname($_SERVER['SCRIPT_NAME']) . "/";
   $config['router_basepath']= dirname($_SERVER['SCRIPT_NAME']) . "/";
+
+  // print_r($config);
+  // die('');
   define('BASEURL', dirname(__FILE__));
 	require "wings/w-core.php";
 

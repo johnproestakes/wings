@@ -24,7 +24,7 @@ function wings_assets_dir($offset=""){
 }
 function siteurl(){
   global $config;
-  return $config['site_url'];
+  return substr($config['site_url'],0, strlen($config['site_url'])-1);
 }
 function link_to($link, $echo=false){
   $output = siteurl() . $link;

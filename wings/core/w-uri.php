@@ -15,7 +15,6 @@ class Wings_URI {
 
       }
     }
-
     return $output;
   }
   private function _redirectURL(){
@@ -59,7 +58,12 @@ class Wings_URI {
   }
   public function segment($n){
     $segments = $this->_allSegments();
-    $return = count($segments) >= intval($n) ? $segments[$n-1] : false;
+    if(count($segments)==0){
+      $return = false;
+    } else{
+      $return = count($segments) >= intval($n) ? $segments[$n-1] : false;
+    }
+
     return $return;
   }
   function __construct(){}
