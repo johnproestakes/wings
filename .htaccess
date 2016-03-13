@@ -1,12 +1,11 @@
-
-# BEGIN WordPress
+# BEGIN Wings
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /wings/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L] # NEEDS TO BE UPDATED ON INSTALLATION
+RewriteRule . /wings/index.php [L]
 </IfModule>
-
-# END WordPress
+# If you need to move this instance of wings, you can always delete this file, it is regenerated when it goes missing
+# END Wings

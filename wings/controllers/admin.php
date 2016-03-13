@@ -1,6 +1,41 @@
 <?php
 
 class Admin extends Wings_AdminController {
+  function update(){
+    global $wings;
+
+    $wings->admin->model('admin_security');
+    if(!$wings->admin_security->is_logged_in()){
+      redirect_to('/admin/login');
+    }
+
+    $data = array(
+      "app_name" => defined('APP_NAME') ? APP_NAME : "Your app",
+      "pageTitle"=>"Update Wings",
+      "plugins" => $wings->plugins->listPermitted(),
+      "scripts"=> array(
+        wings_assets_dir('wings/') . "/bower_components/jquery/dist/jquery.min.js",
+        wings_assets_dir('wings/') . "/bower_components/angular/angular.min.js",
+        wings_assets_dir('wings/') . "/bower_components/angular-route/angular-route.min.js"
+      )
+    );
+    $wings->admin->view('admin/header', $data);
+    $wings->admin->view('update', $data);
+    $wings->admin->view('admin/footer', $data);
+
+  }
+  function update_confirm(){
+    global $wings;
+
+    $wings->admin->model('admin_security');
+    if(!$wings->admin_security->is_logged_in()){
+      redirect_to('/admin/login');
+    } else {
+      $wings->admin->model('update');
+      $wings->update->update_wings();
+    }
+
+  }
   function api(){
     global $wings;
     $wings->admin->model('installer');
