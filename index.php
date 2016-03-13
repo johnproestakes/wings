@@ -56,8 +56,8 @@ if (defined('ENVIRONMENT')) {
 
   }
 
-print_r($_SERVER);
-  die('');
+// print_r($_SERVER);
+//   die('');
   $protocol = explode("/", $_SERVER['HTTP_PROTOCOL']);
   $protocol = strtolower(array_shift($protocol));
   $config['site_url'] = $protocol."://".$_SERVER['HTTP_HOST'].":8888".dirname($_SERVER['SCRIPT_NAME']) . "/";
