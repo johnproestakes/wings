@@ -164,7 +164,6 @@ class Wings_Router {
           $this->routeToController($this->notFound);
         }
 
-        //
       }
     }
   }

@@ -7,4 +7,4 @@ define('ENVIRONMENT', 'development');
 define('APPLICATION_PATH', 'application');
 
 //update this field to accurately route requests
-$config['router_basepath'] = "/";
+// $config['router_basepath'] = "/";
