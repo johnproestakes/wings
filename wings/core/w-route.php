@@ -45,7 +45,7 @@ class Wings_Router {
   function route(){
     global $wings;
     $path = $wings->uri->path();
-
+    $routed = false;
     foreach(array(
       "applyRootRouting",
       "applyAdminRouting",
@@ -53,10 +53,11 @@ class Wings_Router {
       "applyControllerRouting",
       "applyNotFoundRouting") as $method){
       if($this->$method($path)){
+        $routed = true;
         break;
       }
     }
-
+    if(!$routed) die('You don\'t have any routes or controllers set up');
     }
 
 

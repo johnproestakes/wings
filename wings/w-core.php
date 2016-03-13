@@ -30,7 +30,9 @@ class Wings_Core {
     }
   }
   public function importContentsOf($dir){
-    if(is_string($dir)){
+
+    if(is_string($dir) ){
+      if(!file_exists($dir)) return false;
       $files = array_diff(scandir($dir), array('..', '.'));
       foreach($files as $file){
         $filepath = $dir . '/' . $file;
@@ -44,6 +46,7 @@ class Wings_Core {
       }
     } else if(is_array($dir)){
       foreach($dir as $folder){
+        if(!file_exists($folder)) return false;
         $this->importContentsOf($folder);
       }
     }
@@ -76,7 +79,10 @@ if(file_exists(BASEURL.'/wings/app-instance.php')){
 
 }
 //load any custom configurations
+if(!file_exists(APPLICATION_PATH)){
+  echo "sorry man";
+  mkdir(BASEURL. '/'.APPLICATION_PATH);
+}
 $wings->importContentsOf(APPLICATION_PATH . "/config");
-//$wings->can_write_file('.');
 $wings->routes->route();
 ob_end_flush();
